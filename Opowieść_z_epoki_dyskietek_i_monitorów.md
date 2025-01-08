@@ -2,6 +2,7 @@ Niniejszy tekst mojego autorstwa ukazał się na stronach Let’s talk about IT 
 
 
 Link Linkedin: 
+https://www.linkedin.com/feed/update/urn:li:activity:7265618651125342208?utm_source=share&utm_medium=member_desktop
 
 
  Opowieść z epoki dyskietek i monitorów wagi ciężkiej
