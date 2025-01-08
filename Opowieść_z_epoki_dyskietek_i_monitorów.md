@@ -3,8 +3,6 @@ Niniejszy tekst mojego autorstwa ukazał się na stronach Let’s talk about IT 
 
 Link Linkedin: 
 
-Link Facebook: 
-
 
  Opowieść z epoki dyskietek i monitorów wagi ciężkiej
 
