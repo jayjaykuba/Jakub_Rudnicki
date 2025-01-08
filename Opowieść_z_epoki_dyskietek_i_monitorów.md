@@ -5,7 +5,7 @@ Link Linkedin:
 https://www.linkedin.com/feed/update/urn:li:activity:7265618651125342208?utm_source=share&utm_medium=member_desktop
 
 
- Opowieść z epoki dyskietek i monitorów wagi ciężkiej
+ # Opowieść z epoki dyskietek i monitorów wagi ciężkiej
 
 
 Posiadanie w dzisiejszych czasach komputera jest czymś oczywistym, jednak wcale nie tak dawno sytuacja prezentowała się zgoła odmiennie. Blisko 30 lat temu zetknąłem się z pierwszym PC sprowadzonym po znajomości przez kolegę mojego ojca, który pracował jako administrator systemów informatycznych. Obudowa komputera oraz monitora była pożółkła i całość prezentowała się nieszczególnie, ale działała. W tamtym okresie dysponowanie własnym komputerem było niezłym “wypasem” (byłem pierwszym uczniem w swojej klasie w szkole podstawowej, który miał PC w domu).
