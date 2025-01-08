@@ -26,7 +26,7 @@ Połączenie z siecią było wtedy nie lada ceremonią, która odbywała się za
 Wspominając rozmowy telefoniczne z tamtych czasów doskonale pamiętam głośniki podpięte do komputera, które wydawały trzaski przed zbliżającym się połączeniem dla znajdujących się w pobliżu telefonów. Zachodziło tu zjawisko interferencji elektromagnetycznej (EMI), telefon odbierając połączenie emitował sygnały radiowe, które były odbierane przez głośniki komputerowe powodując wydawanie przez nie dźwięków. 
 
 
-Podsumowując - korzystanie z mojego pierwszego komputera miało swój swojski nieco sięrmiężny klimat, jednak wspominam ten okres pozytywnie i z pewną dozą nostalgii
+Podsumowując - korzystanie z mojego pierwszego komputera miało swój swojski nieco sięrmiężny klimat, jednak wspominam ten okres pozytywnie i z pewną dozą nostalgii.
 
 
 
