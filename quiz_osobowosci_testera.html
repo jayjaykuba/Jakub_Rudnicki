@@ -419,42 +419,42 @@
       "A": {
         title: "Tester ninja",
         image: "https://raw.githubusercontent.com/jayjaykuba/Jakub_Rudnicki/main/GitHub_Pages/Quiz_osobowosci_testera/ninja.jpg",
-        text: Ta tajemincza postać wierzy, że najlepsze testy to te, o których nikt nie wie, że się odbyły.
+        text: `Ta tajemincza postać wierzy, że najlepsze testy to te, o których nikt nie wie, że się odbyły.
 Lubisz działać w ciszy i bez rozgłosu niczym ninja. Najchętniej byś robił swoją robotę niezauważony i nie niepokojony przez ludzi.
 Jeśli pracujesz w siedzibie firmy poruszasz się bezszelestnie po korytarzach, trzymając się cienia, wspomagając się amuletem cichych kroków, swoją obecność zaznaczając tylko raportami o wysłanych błędach.
 Podczas wszelkich spotkań w pracy starasz się nie wychylać i maksymalnie zlać się z otoczeniem, aby nie zwracać na siebie uwagi.
-Pomaga Ci w tym opanowana do perfekcji technika zaklętej mgły testowej, umożliwiająca ukrycie się przed wzrokiem ciekawskich na wszystkich spotkaniach.
+Pomaga Ci w tym opanowana do perfekcji technika zaklętej mgły testowej, umożliwiająca ukrycie się przed wzrokiem ciekawskich na wszystkich spotkaniach.`
       },
       "B": {
         title: "Tester automatyk",
         image: "https://raw.githubusercontent.com/jayjaykuba/Jakub_Rudnicki/main/GitHub_Pages/Quiz_osobowosci_testera/automatyk.jpg",
-        text: Technologiczny władca tworzenia skryptów. Jedno jest pewne – jesteś wielkim fanem automatyzacji i to nie tylko testów!
+        text: `Technologiczny władca tworzenia skryptów. Jedno jest pewne – jesteś wielkim fanem automatyzacji i to nie tylko testów!
 Wychodzisz z założenia, że z dostępnych technologii trzeba maksymalnie korzystać, czyli: jakie procesy można automatyzować, to automatyzujesz!
 Twoje miejsce pracy charakteryzuje się obecnością minimum 3 monitorów oraz naszpikowane jest wymyślną elektroniką.
 Największe koszmary (porównywalne do zderzenia z kometą) jakie sobie możesz wyobrazić to wypełnienie czegoś ręcznie oraz brak Internetu.
 Twoje marzenia to napisanie skryptu, który będzie pisał jeszcze lepsze skrypty oraz stworzenie pipeline, który będzie naprawiał inne pipeline’y.
-Umiejętność specjalna nieodzowna w pracy każdego automatyka to Multi-Bot Master, czyli kontrolowanie kilkunastu botów naraz (w tym tego najważniejszego do zamawiania pizzy).
+Umiejętność specjalna nieodzowna w pracy każdego automatyka to Multi-Bot Master, czyli kontrolowanie kilkunastu botów naraz (w tym tego najważniejszego do zamawiania pizzy).`
       },
       "C": {
         title: "Tester detalista",
         image: "https://raw.githubusercontent.com/jayjaykuba/Jakub_Rudnicki/main/GitHub_Pages/Quiz_osobowosci_testera/detalista.jpg",
-        text: Nieustraszony łowca bugów wszelakich – im bardziej skrytych i podstępnych, tym lepiej.
+        text: `Nieustraszony łowca bugów wszelakich – im bardziej skrytych i podstępnych, tym lepiej.
 Używasz wszelkich metod i środków, aby dorwać każdy błąd.
 W pracy przyświecają Ci dewizy: “Każdy błąd jest warty co najmniej 5 stronnicowego raportu” oraz “Nie ma błędów zbyt małych, by je odszukać i dokumentacji testowej, której nie można rozszerzyć”.
 Programiści krzywią się na sam Twój widok, bo wiedzą, że Twoje pojawienie się prawie na pewno przysporzy im dodatkowej harówy.
 Dokumentacja testowa to dla Ciebie niemal relikwia, która zajmuje w Twoim mieszkaniu więcej miejsca niż wszystkie ubrania razem wzięte.
 Twoja specjalna umiejętność to “Eagle eye”, czyli dostrzeżnie przesunięcia nawet pojedynczego piksela na ekranie gołym okiem.
-Legendy głoszą, że najdoskonalsza forma testera detalisty jest w stanie znaleźć błąd nawet w pustym pliku.
+Legendy głoszą, że najdoskonalsza forma testera detalisty jest w stanie znaleźć błąd nawet w pustym pliku.`
       },
       "D": {
         title: "Tester minimalista",
         image: "https://raw.githubusercontent.com/jayjaykuba/Jakub_Rudnicki/main/GitHub_Pages/Quiz_osobowosci_testera/minimalista.jpg",
-        text: Dajesz się z siebie w pracy 100%! 45 w poniedziałek, 15 we wtorek, 20 w środę, 15 w czwartek oraz 5 w piątek.
+        text: `Dajesz się z siebie w pracy 100%! 45 w poniedziałek, 15 we wtorek, 20 w środę, 15 w czwartek oraz 5 w piątek.
 Jesteś wielkim entuzjastą koncepcji work-life balance, czyli dużo kawusi, dużo memów stanowiących integralną część roboty.
 W międzyczasie trochę chaotycznego klikania, mającego na celu znalezienie jakiegokolwiek błędu, a potem zasłużony odpoczynek dla zmęczonego pracownika.
 Jesteś mistrzem minimalizmu oraz oszczędzania energii na wszystkim, nawet na myśleniu.
 Z takimi zdolnościami mógłbyś zostać twarzą reklamy baterii alkalicznych.
-Legendy głoszą, że tester minimalista, który osiągnął mistrzostwo w swojej dziedzinie, jest w stanie przetestować aplikację jednym kliknięciem.
+Legendy głoszą, że tester minimalista, który osiągnął mistrzostwo w swojej dziedzinie, jest w stanie przetestować aplikację jednym kliknięciem.`
       }
     };
 
@@ -499,7 +499,7 @@ Legendy głoszą, że tester minimalista, który osiągnął mistrzostwo w swoje
         tieContainer.innerHTML = "";
         topTypes.forEach(function(type) {
           let label = document.createElement("label");
-          label.innerHTML = <input type="radio" name="tiebreaker" value="${type}"> ${tieOptionsMapping[type]};
+          label.innerHTML = `<input type="radio" name="tiebreaker" value="${type}"> ${tieOptionsMapping[type]}`;
           tieContainer.appendChild(label);
         });
 
@@ -537,9 +537,9 @@ Legendy głoszą, że tester minimalista, który osiągnął mistrzostwo w swoje
       document.getElementById("result-screen").classList.remove("hidden");
 
       const desc = personalityDescriptions[result];
-      let html = <h3>${desc.title}</h3>;
-      html += <img src="${desc.image}" alt="${desc.title}">;
-      html += <p>${desc.text}</p>;
+      let html = `<h3>${desc.title}</h3>`;
+      html += `<img src="${desc.image}" alt="${desc.title}">`;
+      html += `<p>${desc.text}</p>`;
       document.getElementById("result-description").innerHTML = html;
     }
 
