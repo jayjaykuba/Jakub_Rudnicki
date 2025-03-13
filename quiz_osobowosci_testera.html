@@ -137,10 +137,6 @@
       <div class="centered">
         <button onclick="startQuiz()">Rozpocznij quiz</button>
       </div>
-      <!-- Licznik odwiedzin strony -->
-      <div id="visit-counter">
-        Licznik odwiedzin strony: <span id="counter">0</span>
-      </div>
     </div>
 
     <!-- Ekran quizu -->
@@ -158,8 +154,216 @@
               <label><input type="radio" name="q1" value="D"> D) Dla większości zauważonych błędów zakładam, że to feature, a nie bug. Zgłaszam głównie tylko te błędy, z którymi będzie jak najmniej roboty.</label>
             </div>
           </div>
-          <!-- Pytania 2-21 w analogicznej strukturze -->
-          <!-- ... -->
+          <!-- Pytanie 2 -->
+      <div class="question">
+        <p>2. Co robisz, gdy musisz stworzyć nowe testy?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="A"> A) Zachwytów nie ma, ale robisz to, co trzeba.</label>
+          <label><input type="radio" name="q2" value="B"> B) Puszczam możliwie dużo testów automatycznych; w razie potrzeby piszę nowe lub optymalizuję już stworzone.</label>
+          <label><input type="radio" name="q2" value="C"> C) Przeprowadzam ręczne testy, ale jeśli coś można zautomatyzować, to czemu nie?</label>
+          <label><input type="radio" name="q2" value="D"> D) Zaczynam dzień od kawy, scrolluję memy, robię drugą kawę i mogę brać się do pracy. Bez większego przygotowania znajdujesz jakieś błędy i robisz krótkie zgłoszenie, żeby nikt się nie przyczepił, że nic nie robisz.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 3 -->
+      <div class="question">
+        <p>3. Właśnie dowiadujesz się, że zmieniły się wymagania do testowanego projektu. Co robisz?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="A"> A) Nie jesteś zachwycony, ale nie pokazujesz tego po sobie, tylko mówisz, że zrobisz, co trzeba.</label>
+          <label><input type="radio" name="q3" value="B"> B) Wzdychasz ciężko, bo trzeba będzie pisać kolejne testy automatyczne i aktualizować już obecne. Stworzyłeś taką misterną sieć skryptów, która perfekcyjnie działała, a teraz znowu trzeba przy tym grzebać!</label>
+          <label><input type="radio" name="q3" value="C"> C) Sporządam raport godny conajmniej pracy magisterskiej - szczegółowa analiza wpływ zmian, wykresy, prezentacje, wnioski. Całość kończę dramtycznym podsumowaniem: "Czy projekt to przetrwa?" </label>
+          <label><input type="radio" name="q3" value="D"> D) Dostosowujesz testy, ale bez zbędnych fajerwerków. Sporządzam minimalną dokumentację — wystarczającą, by uniknąć śledztwa, gdyby coś poszło nie tak. Potem wracasz do ważniejszych spraw, jak memy i kawusia.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 4 -->
+      <div class="question">
+        <p>4. Zbliża się termin sprint review, w którym bardzo nie masz ochoty uczestniczyć. Co robisz?</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="A"> A) Starasz się robić profesjonalne wrażenie, robiąc mądre miny i w skupieniu przytakujesz co jakiś czas.</label>
+          <label><input type="radio" name="q4" value="B"> B) Przygotowujesz wcześniej prezentację, aby samemu jak najmniej gadać. Najchętniej byś się wcześniej nagrał, a do odpowiedzi na ewentualne pytania wystawiłbyś asystenta AI.</label>
+          <label><input type="radio" name="q4" value="C"> C) Co by się nie działo, zażarcie bronisz projektu swojego zespołu niczym babcia swojego przepisu na pierogi.</label>
+          <label><input type="radio" name="q4" value="D"> D) Ustawiasz czarne tło i nadajesz sobie nazwę „Reconnecting”. Udajesz, że masz problemy z połączeniem z internetem, i liczysz, że wszyscy dadzą Ci spokój.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 5 -->
+      <div class="question">
+        <p>5. Jak traktujesz swoje dokumenty testowe?</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="A"> A) Mam wszystko w jednym folderze, żeby mieć szybki dostęp do tego, co akurat potrzebuję.</label>
+          <label><input type="radio" name="q5" value="B"> B) Mam uporządkowaną bazę danych i system przechowywania, ale nigdy nie wyrzucam żadnych testów – lepiej mieć ich za dużo niż za mało.</label>
+          <label><input type="radio" name="q5" value="C"> C) Oprócz setek dokumentów testowych trzymanych na osobnym dysku twardym posiadasz dla bezpieczeństwa pancerną szafę na wersję papierową testaliów. Najchętniej zainwestowałbyś w osobny serwer do tego celu.</label>
+          <label><input type="radio" name="q5" value="D"> D) Jako wróg biurokracji ograniczasz je do minimum.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 6 -->
+      <div class="question">
+        <p>6. Jak podchodzisz do testów automatycznych?</p>
+        <div class="options">
+          <label><input type="radio" name="q6" value="A"> A) Automatyczne testy? Jeśli będą mniej czasochłonne niż manualne, to czemu nie.</label>
+          <label><input type="radio" name="q6" value="B"> B) Puszczam możliwie dużo testów automatycznych; w razie potrzeby piszę nowe lub optymalizuję już stworzone.</label>
+          <label><input type="radio" name="q6" value="C"> C) Kod? Mam osobną bazę danych na przypadki testowe.</label>
+          <label><input type="radio" name="q6" value="D"> D) Kod to może być co najwyżej kreskowy na opakowaniu od kawy, którą piję. Ja tylko klikam po aplikacji.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 7 -->
+      <div class="question">
+        <p>7. Co robisz, gdy pojawia się krytyczny błąd w produkcji?</p>
+        <div class="options">
+          <label><input type="radio" name="q7" value="A"> A) Zbieram informacje, analizuję problem i powoli przesyłam wszystko zespołowi, by znaleźć przyczynę błędu.</label>
+          <label><input type="radio" name="q7" value="B"> B) Popadam w głębokie zdumienie, że moje testy automatyczne tego nie wyłapały.</label>
+          <label><input type="radio" name="q7" value="C"> C) Krzyczę: „Nie na mojej warcie!” Niezależnie od pory dnia lub nocy stawiasz cały zespół na nogi, mailujesz, wydzwaniasz, puszczasz sygnały dymne i gołębie pocztowe. Jednym słowem chwytasz się wszelkich dostępnych środków, aby błąd jak najszybciej usunąć.</label>
+          <label><input type="radio" name="q7" value="D"> D) Nie ma co panikować – w końcu robotę trzeba sobie dozować w niedużych ilościach. Może przeniesiemy to na następny sprint?</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 8 -->
+      <div class="question">
+        <p>8. Jakie jest Twoje podejście do testowania bezpieczeństwa?</p>
+        <div class="options">
+          <label><input type="radio" name="q8" value="A"> A) Sprawdzam, czy hasło „admin” działa. Jak działa, to znaczy, że system jest bezpieczny.</label>
+          <label><input type="radio" name="q8" value="B"> B) Piszę skrypt, który próbuje zhakować system. Jak się uda, to znaczy, że jest problem.</label>
+          <label><input type="radio" name="q8" value="C"> C) Testuję każdy możliwy scenariusz ataku, nawet te, które wymagają fizycznego włamania do serwerowni.</label>
+          <label><input type="radio" name="q8" value="D"> D) Bezpieczeństwo? To problem bezpieczników. Jak system nie wybuchnie, to jest OK.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 9 -->
+      <div class="question">
+        <p>9. Jak reagujesz, gdy coś nie działa tak, jak powinno?</p>
+        <div class="options">
+          <label><input type="radio" name="q9" value="A"> A) Zgłaszasz problem i czekasz na odpowiedź zespołu, starając się zrozumieć, dlaczego tak się stało.</label>
+          <label><input type="radio" name="q9" value="B"> B) Automatycznie tworzysz zadanie w Jirze i puszczasz testy na nowo, zastanawiając się, jakim cudem nie wyłapały błędu.</label>
+          <label><input type="radio" name="q9" value="C"> C) Nie odpuszczasz! Wzywasz zespół na pilną telekonferencję, wysyłasz maile z wykrzyknikami i żądasz, byśmy natychmiast wdrożyli poprawkę, nawet jeśli programiści mają wolne.</label>
+          <label><input type="radio" name="q9" value="D"> D) Mówisz, że to feature, a nie bug.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 10 -->
+      <div class="question">
+        <p>10. Jak przygotowujesz się do spotkania z zespołem?</p>
+        <div class="options">
+          <label><input type="radio" name="q10" value="A"> A) Przechodzisz przez wszystkie punkty z listy, aby nie zostawić żadnych pytań.</label>
+          <label><input type="radio" name="q10" value="B"> B) Odpowiadasz spokojnie, rzeczowo i na temat, ale najchętniej puściłbyś serię testów automatycznych – niech podziwiają rozbrzmiewającą symfonię udanych testów.</label>
+          <label><input type="radio" name="q10" value="C"> C) Wyciągasz wcześniej przygotowany konspekt, notatki w trzech wersjach (papierowej, cyfrowej i w formie hologramu), pendrive'a z zapasową prezentacją, zapasowy kabel HDMI, a w razie kryzysu masz też stary rzutnik i tablicę suchościeralną. Nic nie zostawiasz przypadkowi, wszystko musi być perfekcyjnie zaplanowane!</label>
+          <label><input type="radio" name="q10" value="D"> D) Sprawdzasz, czy w kamerze nie widać, że siedzisz w bokserkach. Starasz się odwrócić uwagę opowieściami o najnowszych memach lub serialach. W ostateczności wysyłasz jakieś stare linki do dokumentów, a jeśli ktoś to sprawdzi, robisz smutną minę i mówisz, że zaszła tragiczna pomyłka i przygotujesz to na następny raz.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 11 -->
+      <div class="question">
+        <p>11. Jakie jest Twoje podejście do testowania wydajności?</p>
+        <div class="options">
+          <label><input type="radio" name="q11" value="A"> A) Sprawdzam, czy działa, ale jak jest wolne, to nie mój problem. Ja tylko testuję.</label>
+          <label><input type="radio" name="q11" value="B"> B) Piszę skrypt, który symuluje milion użytkowników. Jak system padnie, to wiem, że działa.</label>
+          <label><input type="radio" name="q11" value="C"> C) Analizuję każdy milisekundę, każdy bajt, każdy cykl procesora. Jeśli coś jest wolniejsze niż 0,001 sekundy, to alarm.</label>
+          <label><input type="radio" name="q11" value="D"> D) Jeśli się nie zawiesza, to jest wystarczająco szybkie.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 12 -->
+      <div class="question">
+        <p>12. Jakie jest Twoje podejście do testowania regresji?</p>
+        <div class="options">
+          <label><input type="radio" name="q12" value="A"> A) Testuję tylko to, co mi pasuje. Reszta to nie mój problem.</label>
+          <label><input type="radio" name="q12" value="B"> B) Mam skrypty, które testują wszystko za mnie. Ja tylko piję kawę i czekam na wyniki.</label>
+          <label><input type="radio" name="q12" value="C"> C) Testuję każdą linijkę kodu, nawet te, które nie były zmieniane od 10 lat.</label>
+          <label><input type="radio" name="q12" value="D"> D) Regresja? Nie słyszałem. Jeśli działa, to działa – po co mieszać.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 13 -->
+      <div class="question">
+        <p>13. Jak reagujesz, gdy ktoś mówi: „Po co testować, skoro i tak działa”?</p>
+        <div class="options">
+          <label><input type="radio" name="q13" value="A"> A) Cicho testujesz dalej, bo wiesz, że za chwilę system wybuchnie. A Ty będziesz tam, w cieniu, z popcornem oglądać spektakl.</label>
+          <label><input type="radio" name="q13" value="B"> B) Piszesz skrypt, który pokaże, ile błędów można znaleźć w 5 minut. Potem developer płacze w kącie.</label>
+          <label><input type="radio" name="q13" value="C"> C) Przytaczasz 47 przykładów z historii, gdzie „działało”, a potem nastąpiła pożoga, rozpacz, darcie szat i rozwałka klawiatury.</label>
+          <label><input type="radio" name="q13" value="D"> D) Przytakujesz radośnie. No właśnie, po co testować? Jak się zepsuje, to nie Ty będziesz debugował.</label>
+        </div>
+      </div>
+
+
+      <!-- Pytanie 14 -->
+      <div class="question">
+        <p>14. Kiedy widzisz świeży kod developera:</p>
+        <div class="options">
+          <label><input type="radio" name="q15" value="A"> A) Starasz się przebrnąć przez to bez emocji.</label>
+          <label><input type="radio" name="q15" value="B"> B) Puszczasz automatyczne testy, zanim developer zdąży mrugnąć.</label>
+          <label><input type="radio" name="q15" value="C"> C) Analizujesz każdą linijkę, jak student przeglądający materiały dzień przed egzaminem.</label>
+          <label><input type="radio" name="q15" value="D"> D) Jeden rzut oka wystarczy Ci, żeby wszystko wiedzieć.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 15 -->
+      <div class="question">
+        <p>15. Preferowany strój na spotkanie z klientem:</p>
+        <div class="options">
+          <label><input type="radio" name="q16" value="A"> A) Cały na czarno, może zleje się z otoczeniem.</label>
+          <label><input type="radio" name="q16" value="B"> B) Koszulka z napisem "automation is love".</label>
+          <label><input type="radio" name="q16" value="C"> C) Garnitur z lupą w kieszeni.</label>
+          <label><input type="radio" name="q16" value="D"> D) Cokolwiek, byle wygodnie – to nie rewia mody. Klient kupuje produkt, a nie Twoje zdjęcia do katalogu.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 16 -->
+      <div class="question">
+        <p>16. Co robisz, gdy ktoś pyta o postęp prac?</p>
+        <div class="options">
+          <label><input type="radio" name="q17" value="A"> A) Zwięźle przedstawiasz najważniejsze kwestie.</label>
+          <label><input type="radio" name="q17" value="B"> B) Pokazujesz wykresy z automatycznych raportów.</label>
+          <label><input type="radio" name="q17" value="C"> C) Przedstawiasz 40-slajdową prezentację z każdym detalem.</label>
+          <label><input type="radio" name="q17" value="D"> D) Mówisz "prawie" i się uśmiechasz.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 17 -->
+      <div class="question">
+        <p>17. Gdy widzisz niedokładny kod:</p>
+        <div class="options">
+          <label><input type="radio" name="q18" value="A"> A) Cicho i spokojnie robisz notatki, by później zgłosić błędy.</label>
+          <label><input type="radio" name="q18" value="B"> B) Automatyczny raport zabija developera skuteczniej niż Ty.</label>
+          <label><input type="radio" name="q18" value="C"> C) Analiza kodu jest bardziej dokładna niż sekcja zwłok.</label>
+          <label><input type="radio" name="q18" value="D"> D) Wzruszasz ramionami i pijesz kawę. Wielkodusznie dajesz się wykazać programiście.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 18 -->
+      <div class="question">
+        <p>18. Moja definicja stresu:</p>
+        <div class="options">
+          <label><input type="radio" name="q19" value="A"> A) Moment, gdy ktoś zauważa, że w ogóle jesteś.</label>
+          <label><input type="radio" name="q19" value="B"> B) Gdy test automatyczny ma jedną sekundę opóźnienia.</label>
+          <label><input type="radio" name="q19" value="C"> C) Gdy opis błędu nie mieści się w oknie z raportem.</label>
+          <label><input type="radio" name="q19" value="D"> D) Gdy ktoś chce ode Ciebie więcej niż minimum.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 19 -->
+      <div class="question">
+        <p>19. Przed Tobą pełna szafa z testerowymi gadżetami: kubki, koszulki, naklejki z hasłami "bug hunter". Co wybierasz?</p>
+        <div class="options">
+          <label><input type="radio" name="q20" value="A"> A) Koszulkę "keep calm and fix bugs". Profesjonalizm to podstawa, nawet w stylówce.</label>
+          <label><input type="radio" name="q20" value="B"> B) Nic. Przecież możesz sobie wydrukować własne naklejki trzy razy lepsze.</label>
+          <label><input type="radio" name="q20" value="C"> C) Bierzesz wszystko i obwieszasz się wszystkim, jak choinka na Boże Narodzenie – w końcu testowanie to Twoje drugie życie!</label>
+          <label><input type="radio" name="q20" value="D"> D) Kubek wystarczy. Reszta zbiera kurz i zajmuje miejsce na biurku, na którym już stoją trzy kubki po kawie.</label>
+        </div>
+      </div>
+
+      <!-- Pytanie 20 -->
+      <div class="question">
+        <p>20. Zespół zaprasza Cię na lunch, żeby omówić projekt. Co robisz?</p>
+        <div class="options">
+          <label><input type="radio" name="q21" value="A"> A) Idziesz, żeby posłuchać, co mają do powiedzenia, i dorzucasz coś od siebie – nie za dużo i nie za mało, żeby się nie wychylać.</label>
+          <label><input type="radio" name="q21" value="B"> B) Przy okazji proponujesz optymalizację procesu zamawiania pizzy. Może bot na Slacku zrobi to lepiej?</label>
+          <label><input type="radio" name="q21" value="C"> C) Zabierasz ze sobą segregatory z wydrukami raportów błędów i omawiasz je przy stole – każdy moment jest dobry na doskonalenie!</label>
+          <label><input type="radio" name="q21" value="D"> D) Wolisz zjeść kanapkę w domu – po co tracić czas i energię na jakieś wędrówki?</label>
+        </div>
+      </div>
+
         </div>
 
         <!-- Kontener na pytanie dodatkowe (tie-breaker) – opcje generowane dynamicznie -->
@@ -202,9 +406,6 @@
   </div>
 
   <script>
-    // Globalna zmienna przechowująca wynik quizu
-    let quizResult = null;
-
     // Mapowanie opcji tie-breaker
     const tieOptionsMapping = {
       "A": "Ciszej jedziesz, dalej zajdziesz.",
@@ -331,10 +532,6 @@ Legendy głoszą, że tester minimalista, który osiągnął mistrzostwo w swoje
     }
 
     function showResult(result) {
-      // Przy pierwszym wywołaniu (wynik quizu) zapisujemy wynik w quizResult
-      if (quizResult === null) {
-        quizResult = result;
-      }
       document.getElementById("quiz-screen").classList.add("hidden");
       document.getElementById("other-personalities-screen").classList.add("hidden");
       document.getElementById("result-screen").classList.remove("hidden");
@@ -351,11 +548,9 @@ Legendy głoszą, że tester minimalista, który osiągnął mistrzostwo w swoje
       document.getElementById("other-personalities-screen").classList.remove("hidden");
     }
 
-    // Funkcja backToResult przywraca wynik quizu zapisany w quizResult,
-    // niezależnie od tego, jaki wynik został wyświetlony w menu innych typów.
     function backToResult() {
       document.getElementById("other-personalities-screen").classList.add("hidden");
-      showResult(quizResult);
+      document.getElementById("result-screen").classList.remove("hidden");
     }
 
     function restartQuiz() {
