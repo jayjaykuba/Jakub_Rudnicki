@@ -1,10 +1,12 @@
 import tkinter as tk
+import random
+from tkinter import simpledialog
 
 # Globalne zmienne
 score = 0
 question_index = 0
 current_questions = []  # Aktualnie wybrana lista pytań
-current_quiz_type = ""  # Typ quizu ("exploratory", "nonfunctional", "regression")
+current_quiz_type = ""  # Typ quizu ("exploratory", "nonfunctional", "regression", "accessibility", "random")
 
 # Mapowanie indeksu na literę opcji
 option_letters = ["A", "B", "C", "D"]
@@ -177,6 +179,7 @@ questions_exploratory = [
         "Narzędzia do mind mappingu mogą pomóc w organizacji myśli i dokumentacji przebiegu testów eksploracyjnych, mimo że sam proces jest głównie manualny."
     )
 ]
+
 # Pytania do quizu testów niefunkcjonalnych
 questions_nonfunctional = [
     (
@@ -188,9 +191,7 @@ questions_nonfunctional = [
             "Liczba błędów wykrytych przy pomocy testów"
         ],
         1,
-        "Rzeczywiste warunki użytkowania systemu często charakteryzują się długotrwałymi okresami wysokiego obciążenia, "
-        "szczególnie podczas godzin szczytu lub ważnych wydarzeń. System, który utrzymuje stabilną wydajność, sprawdzi "
-        "się najlepiej, a pozostałe opcje dotyczą tylko pojedynczych aspektów wydajności."
+        "Rzeczywiste warunki użytkowania systemu często charakteryzują się długotrwałymi okresami wysokiego obciążenia, szczególnie podczas godzin szczytu lub ważnych wydarzeń. System, który utrzymuje stabilną wydajność, sprawdzi się najlepiej, a pozostałe opcje dotyczą tylko pojedynczych aspektów wydajności."
     ),
     (
         "W testowaniu bezpieczeństwa, który aspekt jest najtrudniejszy do zautomatyzowania i wymaga największego zaangażowania człowieka?",
@@ -201,8 +202,7 @@ questions_nonfunctional = [
             "Analiza logiki biznesowej pod kątem potencjalnych luk w zabezpieczeniach"
         ],
         3,
-        "Analiza logiki biznesowej wymaga głębokiego zrozumienia procesów oraz przewidywania nietypowych ścieżek "
-        "wykorzystania systemu, co jest zadaniem dla ludzkiego eksperta."
+        "Analiza logiki biznesowej wymaga głębokiego zrozumienia procesów oraz przewidywania nietypowych ścieżek wykorzystania systemu, co jest zadaniem dla ludzkiego eksperta."
     ),
     (
         "Który scenariusz najlepiej oddaje ideę „testowania degradowalności” systemu?",
@@ -213,8 +213,7 @@ questions_nonfunctional = [
             "Pomiar szybkości odpowiedzi systemu przy maksymalnym obciążeniu"
         ],
         2,
-        "Testowanie degradowalności sprawdza, czy system potrafi zachować podstawową funkcjonalność nawet przy "
-        "ograniczonych zasobach, co jest kluczowe w sytuacjach awaryjnych."
+        "Testowanie degradowalności sprawdza, czy system potrafi zachować podstawową funkcjonalność nawet przy ograniczonych zasobach, co jest kluczowe w sytuacjach awaryjnych."
     ),
     (
         "W kontekście testów użyteczności, które narzędzie/metoda dostarcza najbardziej wiarygodnych danych o rzeczywistym zachowaniu użytkowników?",
@@ -225,8 +224,7 @@ questions_nonfunctional = [
             "Wywiady indywidualne z grupą docelową"
         ],
         1,
-        "Testy A/B rejestrują rzeczywiste interakcje użytkowników w naturalnych warunkach, co daje obiektywne dane, "
-        "w przeciwieństwie do metod opartych tylko na subiektywnych opiniach."
+        "Testy A/B rejestrują rzeczywiste interakcje użytkowników w naturalnych warunkach, co daje obiektywne dane, w przeciwieństwie do metod opartych tylko na subiektywnych opiniach."
     ),
     (
         "Który z poniższych parametrów jest kluczowy przy testach dostępności (accessibility testing)?",
@@ -237,8 +235,7 @@ questions_nonfunctional = [
             "Liczba dostępnych funkcji poprawiających komfort użytkowania"
         ],
         1,
-        "Wytyczne WCAG stanowią międzynarodowy standard dostępności, co gwarantuje, że treści będą dostępne dla osób "
-        "z różnymi niepełnosprawnościami."
+        "Wytyczne WCAG stanowią międzynarodowy standard dostępności, co gwarantuje, że treści będą dostępne dla osób z różnymi niepełnosprawnościami."
     ),
     (
         "Które podejście najlepiej opisuje strategię „testowania ryzyka” w obszarze testów niefunkcjonalnych?",
@@ -249,8 +246,7 @@ questions_nonfunctional = [
             "Zastosowanie wyłącznie automatycznych narzędzi do kompleksowego testowania"
         ],
         1,
-        "Testowanie oparte na ryzyku polega na priorytetyzacji testów na kluczowych komponentach, co pozwala skupić "
-        "zasoby na najważniejszych obszarach."
+        "Testowanie oparte na ryzyku polega na priorytetyzacji testów na kluczowych komponentach, co pozwala skupić zasoby na najważniejszych obszarach."
     ),
     (
         "Która z poniższych metod testowania bezpieczeństwa opiera się na wysyłaniu losowych, nieprzewidywalnych danych w celu wykrycia nieoczekiwanych błędów?",
@@ -261,8 +257,7 @@ questions_nonfunctional = [
             "Testy fuzzingowe"
         ],
         3,
-        "Fuzzing polega na wprowadzaniu losowych lub nieprawidłowych danych wejściowych do systemu, aby wykryć błędy "
-        "lub luki, co jest trudne do osiągnięcia innymi metodami."
+        "Fuzzing polega na wprowadzaniu losowych lub nieprawidłowych danych wejściowych do systemu, aby wykryć błędy lub luki, co jest trudne do osiągnięcia innymi metodami."
     ),
     (
         "Jak najlepiej zdefiniować pojęcie „latent defects” (ukryte defekty) w kontekście testów niefunkcjonalnych?",
@@ -273,8 +268,7 @@ questions_nonfunctional = [
             "Błędy wykrywane natychmiast po wdrożeniu systemu"
         ],
         2,
-        "Ukryte defekty to błędy, które nie są widoczne w standardowych testach, lecz ujawniają się w specyficznych, "
-        "często ekstremalnych warunkach pracy systemu."
+        "Ukryte defekty to błędy, które nie są widoczne w standardowych testach, lecz ujawniają się w specyficznych, często ekstremalnych warunkach pracy systemu."
     ),
     (
         "Jaką rolę odgrywają testy niefunkcjonalne w kontekście Continuous Integration/Continuous Deployment (CI/CD)?",
@@ -285,8 +279,7 @@ questions_nonfunctional = [
             "Są przydatne tylko w końcowej fazie testowania, tuż przed wdrożeniem"
         ],
         1,
-        "Testy niefunkcjonalne w CI/CD działają jako linia obrony – wykrywają problemy zanim zmiany trafią do "
-        "środowiska produkcyjnego, co chroni doświadczenie użytkowników."
+        "Testy niefunkcjonalne w CI/CD działają jako linia obrony – wykrywają problemy zanim zmiany trafią do środowiska produkcyjnego, co chroni doświadczenie użytkowników."
     ),
     (
         "Testy użyteczności (Usability Testing) skupiają się głównie na:",
@@ -297,8 +290,7 @@ questions_nonfunctional = [
             "Analizie zgodności z normą ISO 9241"
         ],
         1,
-        "Testy użyteczności mierzą efektywność i szybkość, z jaką użytkownicy wykonują zadania, co pomaga ocenić "
-        "intuicyjność i ergonomię interfejsu."
+        "Testy użyteczności mierzą efektywność i szybkość, z jaką użytkownicy wykonują zadania, co pomaga ocenić intuicyjność i ergonomię interfejsu."
     ),
     (
         "Który test sprawdza, czy system odzyskuje sprawność w czasie krótszym niż 5 minut po awarii zasilania?",
@@ -309,8 +301,7 @@ questions_nonfunctional = [
             "Testy ciągłości działania (Disaster Recovery Testing)"
         ],
         2,
-        "Testy odzyskiwania (Recovery Testing) weryfikują, czy system potrafi szybko przywrócić działanie po awarii, "
-        "np. utracie zasilania."
+        "Testy odzyskiwania (Recovery Testing) weryfikują, czy system potrafi szybko przywrócić działanie po awarii, np. utracie zasilania."
     ),
     (
         "Co jest głównym celem testów 'Chaos Inżynieryjnego' (Chaos Monkey)?",
@@ -321,8 +312,7 @@ questions_nonfunctional = [
             "Wykrywanie luk w zabezpieczeniach API"
         ],
         1,
-        "Testy Chaos Inżynieryjnego, takie jak Chaos Monkey, celowo wprowadzają losowe awarie, aby wymusić projektowanie "
-        "systemu odpornego na błędy i awarie."
+        "Testy Chaos Inżynieryjnego, takie jak Chaos Monkey, celowo wprowadzają losowe awarie, aby wymusić projektowanie systemu odpornego na błędy i awarie."
     ),
     (
         "Co to jest 'baseline' w kontekście testów wydajnościowych?",
@@ -333,8 +323,7 @@ questions_nonfunctional = [
             "Podstawowy scenariusz testowy"
         ],
         1,
-        "Baseline to ustalony punkt odniesienia, na podstawie którego porównywane są kolejne wyniki testów, "
-        "umożliwiając wykrycie regresji wydajnościowych."
+        "Baseline to ustalony punkt odniesienia, na podstawie którego porównywane są kolejne wyniki testów, umożliwiając wykrycie regresji wydajnościowych."
     ),
     (
         "Co oznacza termin 'Time to First Byte' (TTFB) w kontekście testów wydajnościowych?",
@@ -345,8 +334,7 @@ questions_nonfunctional = [
             "Czas pierwszej interakcji użytkownika z systemem"
         ],
         0,
-        "TTFB to metryka określająca czas, jaki upływa od wysłania żądania do momentu otrzymania pierwszego bajtu "
-        "odpowiedzi, co jest kluczowe dla oceny responsywności serwera."
+        "TTFB to metryka określająca czas, jaki upływa od wysłania żądania do momentu otrzymania pierwszego bajtu odpowiedzi, co jest kluczowe dla oceny responsywności serwera."
     ),
     (
         "Co jest głównym celem testów obciążeniowych (load testing)?",
@@ -357,12 +345,11 @@ questions_nonfunctional = [
             "Sprawdzenie czasu odpowiedzi dla pojedynczego użytkownika"
         ],
         0,
-        "Testy obciążeniowe mają na celu sprawdzenie, czy system wytrzymuje maksymalne przewidywane obciążenie i spełnia "
-        "wymagania wydajnościowe przed wdrożeniem na produkcję."
+        "Testy obciążeniowe mają na celu sprawdzenie, czy system wytrzymuje maksymalne przewidywane obciążenie i spełnia wymagania wydajnościowe przed wdrożeniem na produkcję."
     )
 ]
 
-# Pytania do quizu testów regresyjnych (15 pytań)
+# Pytania do quizu testów regresyjnych
 questions_regression = [
     (
         "Co jest najgłębszym celem testów regresyjnych w kontekście DevOps?",
@@ -531,9 +518,163 @@ questions_regression = [
     )
 ]
 
-# Tekst powitalny dla quizu regresyjnego
-intro_text = (
+# Pytania do quizu testów dostępności
+questions_accessibility = [
+    (
+        "Co oznacza skrót WCAG w kontekście dostępności oprogramowania?",
+        [
+            "Web Content Accessibility Guidelines",
+            "World Computer Access Group",
+            "Web Control and Accessibility Gateway",
+            "Web Content Analysis Guidelines"
+        ],
+        0,
+        "WCAG to zbiór wytycznych opracowanych przez W3C, określających, jak tworzyć dostępne treści internetowe dla osób z niepełnosprawnościami."
+    ),
+    (
+        "Który z poniższych elementów NIE jest częścią testów dostępności mobilnej?",
+        [
+            "Testowanie kompatybilności z czytnikami ekranu (VoiceOver, TalkBack)",
+            "Sprawdzanie minimalnego rozmiaru elementów dotykalnych",
+            "Testowanie responsywności na różnych rozmiarach ekranu",
+            "Sprawdzanie zgodności z protokołem SMTP"
+        ],
+        3,
+        "SMTP to protokół do przesyłania e-maili, niezwiązany z testowaniem dostępności mobilnej. Pozostałe opcje są kluczowe dla oceny dostępności."
+    ),
+    (
+        "Co oznacza termin 'keyboard trap' w kontekście dostępności?",
+        [
+            "Funkcja zwiększająca bezpieczeństwo klawiatury",
+            "Sytuacja, w której użytkownik nie może opuścić elementu interfejsu za pomocą klawiatury",
+            "Skrót klawiaturowy blokujący dostęp do strony",
+            "Mechanizm ochrony przed niepowołanym dostępem do aplikacji"
+        ],
+        1,
+        "Keyboard trap to sytuacja, gdy użytkownik korzystający z klawiatury nie może wyjść z danego elementu interfejsu, co utrudnia nawigację osobom nieużywającym myszy."
+    ),
+    (
+        "Co to jest 'skip navigation' (pomijanie nawigacji) w kontekście dostępności stron internetowych?",
+        [
+            "Technika eliminująca menu nawigacyjne z aplikacji mobilnych",
+            "Link pozwalający użytkownikom klawiatury przejść bezpośrednio do głównej treści strony",
+            "Funkcja, która powoduje, że czytniki ekranu pomijają menu nawigacyjne",
+            "Metoda ukrywania nawigacji na urządzeniach o małych ekranach"
+        ],
+        1,
+        "Skip navigation to technika polegająca na umieszczeniu ukrytego linku, który umożliwia pominięcie powtarzających się elementów nawigacyjnych, co ułatwia nawigację użytkownikom klawiatury."
+    ),
+    (
+        "Co to jest 'alt text' i dlaczego jest ważny dla dostępności?",
+        [
+            "Tekst wyświetlany na przyciskach",
+            "Opis obrazka odczytywany przez czytniki ekranu",
+            "Nagłówek strony",
+            "Stopka strony"
+        ],
+        1,
+        "Alt text to opis obrazu dodawany do tagu <img>, który jest odczytywany przez czytniki ekranu, umożliwiając zrozumienie treści wizualnej przez osoby niewidome."
+    ),
+    (
+        "Co to jest semantyczny HTML i dlaczego jest ważny dla dostępności?",
+        [
+            "HTML używany do definiowania wyglądu strony",
+            "HTML wykorzystujący znaczniki zgodnie z ich przeznaczeniem",
+            "HTML zoptymalizowany dla wyszukiwarek internetowych",
+            "HTML zawierający tylko tekst, bez elementów graficznych"
+        ],
+        1,
+        "Semantyczny HTML polega na stosowaniu znaczników zgodnie z ich znaczeniem (np. <header>, <nav>, <main>), co ułatwia czytnikom ekranu interpretację struktury strony."
+    ),
+    (
+        "Które z poniższych zdań najlepiej opisuje cel 'testów obciążeniowych dostępności'?",
+        [
+            "Sprawdzenie wydajności strony dla użytkowników z wolnym połączeniem",
+            "Weryfikacja, jak technologie wspomagające radzą sobie z dużą ilością treści",
+            "Testowanie wytrzymałości fizycznej urządzeń wspomagających",
+            "Ten termin nie istnieje w kontekście testowania dostępności"
+        ],
+        3,
+        "Termin 'testy obciążeniowe dostępności' nie występuje – testy obciążeniowe dotyczą wydajności systemu, a nie dostępności."
+    ),
+    (
+        "Testujesz formularz. Co JEST zgodne z WCAG?",
+        [
+            "Błąd jest pokazany czerwoną ramką i tekstem 'Niepoprawne dane'",
+            "Błąd jest opisany w tooltipie po najechaniu myszą",
+            "Błąd jest wyświetlony w konsoli przeglądarki",
+            "Błąd jest komunikowany zmianą ikony w prawym rogu ekranu"
+        ],
+        0,
+        "Błąd powinien być wyraźnie komunikowany wizualnie (np. czerwona ramka) oraz tekstowo, aby był dostępny dla wszystkich użytkowników, w tym osób korzystających z czytników ekranu."
+    ),
+    (
+        "Co jest wymagane dla napisów (captions) na żywo zgodnie z WCAG?",
+        [
+            "Muszą być zatwierdzone przez prawnika",
+            "Powinny być w 100% dokładne",
+            "Muszą identyfikować mówców i opisywać istotne dźwięki",
+            "Powinny być dostępne tylko w języku angielskim"
+        ],
+        2,
+        "Napisy na żywo muszą identyfikować mówców oraz opisywać istotne dźwięki, aby osoby niesłyszące mogły w pełni zrozumieć przekaz audio."
+    ),
+    (
+        "Co to jest 'screen reader'?",
+        [
+            "Oprogramowanie do edycji zdjęć",
+            "Narzędzie odczytujące tekst na ekranie dla osób niewidomych",
+            "Aplikacja do nauki języków",
+            "Automatyczny tester interfejsu graficznego"
+        ],
+        1,
+        "Screen reader to oprogramowanie, które odczytuje na głos zawartość ekranu, umożliwiając osobom niewidomym korzystanie z urządzeń."
+    ),
+    (
+        "Czym są technologie asystujące?",
+        [
+            "Narzędzia do automatycznego testowania oprogramowania",
+            "Oprogramowanie i sprzęt ułatwiające korzystanie z technologii osobom z niepełnosprawnościami",
+            "Standardy projektowania interfejsów użytkownika",
+            "Języki programowania do tworzenia dostępnych stron internetowych"
+        ],
+        1,
+        "Technologie asystujące, takie jak czytniki ekranu czy lupy ekranowe, są niezbędne dla osób z niepełnosprawnościami, umożliwiając im korzystanie z komputerów i smartfonów."
+    ),
+    (
+        "Dlaczego testowanie dostępności jest ważne?",
+        [
+            "Poprawia SEO",
+            "Zwiększa liczbę potencjalnych użytkowników",
+            "Spełnia wymagania prawne",
+            "Wszystkie powyższe odpowiedzi"
+        ],
+        3,
+        "Testowanie dostępności poprawia SEO, zwiększa potencjalną liczbę użytkowników oraz spełnia wymagania prawne, co czyni je kluczowym elementem projektowania stron."
+    ),
+    (
+        "Co to jest 'alt text' (tekst alternatywny) w kontekście stron internetowych?",
+        [
+            "Tekst wyświetlany na przyciskach",
+            "Opis obrazka odczytywany przez czytniki ekranu",
+            "Nagłówek strony",
+            "Stopka strony"
+        ],
+        1,
+        "Alt text to opis obrazu, który umożliwia osobom korzystającym z czytników ekranu zrozumienie, co przedstawia dany obraz, a także jest wyświetlany, gdy obraz nie może zostać załadowany."
+    )
+]
+
+# Tekst powitalny dla quizu testów regresyjnych
+intro_text_regression = (
     "Witam w quizie o testach regresyjnych!\n"
+    "Odpowiedz na pytania, wybierając jedną z opcji.\n"
+    "Powodzenia!"
+)
+
+# Tekst powitalny dla quizu testów dostępności
+intro_text_accessibility = (
+    "Witam w quizie o testach dostępności!\n"
     "Odpowiedz na pytania, wybierając jedną z opcji.\n"
     "Powodzenia!"
 )
@@ -546,14 +687,9 @@ def custom_showinfo(title, message):
     frame = tk.Frame(top)
     frame.pack(fill="both", expand=True, padx=20, pady=20)
     
-    # Zmniejszona wielkość pola tekstowego
-    text_widget = tk.Text(frame, wrap="word", font=("Arial", 14), width=70, height=12)
-    text_widget.insert("1.0", message)
-    
-    # Konfiguracja interlini
-    text_widget.tag_configure("spacing", spacing1=5, spacing2=10, spacing3=5)
-    text_widget.tag_add("spacing", "1.0", "end")
-    
+    formatted_message = message.replace("\n", "\n\n")
+    text_widget = tk.Text(frame, wrap="word", font=("Arial", 14), width=60, height=10)
+    text_widget.insert("1.0", formatted_message)
     text_widget.config(state="disabled")
     scrollbar_y = tk.Scrollbar(frame, command=text_widget.yview)
     scrollbar_y.pack(side="right", fill="y")
@@ -561,25 +697,26 @@ def custom_showinfo(title, message):
     text_widget.pack(side="left", fill="both", expand=True)
     
     ok_button = tk.Button(top, text="OK", font=("Arial", 14), command=top.destroy)
-    ok_button.pack(pady=(0, 15))
+    ok_button.pack(pady=(0, 20))
     
-    # Zmniejszony rozmiar okna
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
-    width = int(screen_width * 0.5)  # Zmniejszono z 0.6 na 0.5
-    height = int(screen_height * 0.4)  # Zmniejszono z 0.5 na 0.4
+    width = int(screen_width * 0.5)
+    height = int(screen_height * 0.4)
     x = int((screen_width - width) / 2)
     y = int((screen_height - height) / 2)
     top.geometry(f"{width}x{height}+{x}+{y}")
+    top.resizable(True, True)
     
     top.grab_set()
     root.wait_window(top)
+
 # Menu wynikowe po ukończeniu quizu
 def show_result_menu():
-    result_frame = tk.Frame(root)
+    result_frame = tk.Frame(root, bg="white")
     result_frame.pack(expand=True)
     
-    result_label = tk.Label(result_frame, text=f"Twój wynik: {score}/{len(current_questions)}", font=("Arial", 20))
+    result_label = tk.Label(result_frame, text=f"Twój wynik: {score}/{len(current_questions)}", font=("Arial", 20), bg="white")
     result_label.pack(pady=20)
     
     def go_to_menu():
@@ -607,14 +744,29 @@ def start_quiz(quiz_type):
     score = 0
     question_index = 0
     current_quiz_type = quiz_type
-    
+
     if quiz_type == "exploratory":
         current_questions = questions_exploratory
+        quiz_intro = "Witam w quizie o testowaniu eksploracyjnym!\nOdpowiedz na pytania, wybierając jedną z opcji.\nPowodzenia!"
     elif quiz_type == "nonfunctional":
         current_questions = questions_nonfunctional
+        quiz_intro = "Witam w quizie o testach niefunkcjonalnych!\nOdpowiedz na pytania, wybierając jedną z opcji.\nPowodzenia!"
     elif quiz_type == "regression":
         current_questions = questions_regression
-    
+        quiz_intro = intro_text_regression
+    elif quiz_type == "accessibility":
+        current_questions = questions_accessibility
+        quiz_intro = intro_text_accessibility
+    elif quiz_type == "random":
+        # Połącz wszystkie pytania
+        all_questions = questions_exploratory + questions_nonfunctional + questions_regression + questions_accessibility
+        # Zapytaj użytkownika o liczbę pytań
+        num = simpledialog.askinteger("Losowy quiz", "Podaj liczbę pytań (od 15 do 40):", minvalue=15, maxvalue=40)
+        if num is None:
+            return  # Użytkownik anulował
+        current_questions = random.sample(all_questions, num)
+        quiz_intro = f"Losowy quiz - {num} pytań!\nPowodzenia!"
+
     main_menu_frame.pack_forget()
     quiz_frame.pack(expand=True)
     question_number_label.pack(pady=10)
@@ -649,11 +801,11 @@ def check_answer(selected):
         score += 1
     else:
         correct_letter = option_letters[correct]
-        custom_showinfo("Odpowiedź", f"Niepoprawna odpowiedź. Odpowiedź prawidłowa to: {correct_letter}. {explanation}")
+        custom_showinfo("Odpowiedź", f"Niepoprawna odpowiedź. Odpowiedź prawidłowa to: {correct_letter}.\n\n{explanation}")
     question_index += 1
     next_question()
 
-# Główne menu – tutaj dodajemy tekst nagłówkowy nad przyciskami wyboru quizu
+# Główne menu – nagłówek i przyciski wyboru quizu
 def show_main_menu():
     main_menu_frame.pack(expand=True)
 
@@ -661,35 +813,43 @@ def show_main_menu():
 root = tk.Tk()
 root.title("Quizy o Testowaniu Oprogramowania")
 root.geometry("640x600")
+root.configure(bg="white")
 
 # Główne menu
-main_menu_frame = tk.Frame(root)
+main_menu_frame = tk.Frame(root, bg="white")
 main_menu_frame.pack(expand=True)
 
 header_text = (
-    "Witam w aplikacji zawierającej quizy o różnych rodzajach testowania oprogramowania.\n"
+    "Witam w aplikacji zawierającej quizy o różnych rodzajach testowania oprogramowania.\n\n"
     "Każdy test zawiera po 4 możliwe odpowiedzi, z których jedna jest poprawna.\n\n"
-    "Proszę wybrać jedną z poniższych opcji, aby rozpocząć quiz o wybranej tematyce:"
+    "Quiz losowy zawiera losowo wybrane pytania ze wszystkich dostępnych quizów.\n\n"
+    "Proszę wybrać jedną z poniższych opcji, aby rozpocząć quiz:"
 )
-header_label = tk.Label(main_menu_frame, text=header_text, font=("Arial", 16), wraplength=600, justify="center")
+header_label = tk.Label(main_menu_frame, text=header_text, font=("Arial", 16), wraplength=600, justify="center", bg="white")
 header_label.pack(pady=20)
 
 exploratory_button = tk.Button(main_menu_frame, text="Testowanie Eksploracyjne", font=("Arial", 16),
-                               command=lambda: start_quiz("exploratory"))
+                               command=lambda: start_quiz("exploratory"), bg="#4CAF50", fg="white")
 nonfunctional_button = tk.Button(main_menu_frame, text="Testy Niefunkcjonalne", font=("Arial", 16),
-                                 command=lambda: start_quiz("nonfunctional"))
+                                 command=lambda: start_quiz("nonfunctional"), bg="#2196F3", fg="white")
 regression_button = tk.Button(main_menu_frame, text="Testy Regresyjne", font=("Arial", 16),
-                              command=lambda: start_quiz("regression"))
+                              command=lambda: start_quiz("regression"), bg="#FFC107", fg="black")
+accessibility_button = tk.Button(main_menu_frame, text="Testowanie Dostępności", font=("Arial", 16),
+                                 command=lambda: start_quiz("accessibility"), bg="#9C27B0", fg="white")
+random_button = tk.Button(main_menu_frame, text="Quiz losowy", font=("Arial", 16),
+                          command=lambda: start_quiz("random"), bg="#607D8B", fg="white")
 
 exploratory_button.pack(pady=10)
 nonfunctional_button.pack(pady=10)
 regression_button.pack(pady=10)
+accessibility_button.pack(pady=10)
+random_button.pack(pady=10)
 
-# Ramka quizu (wspólna dla wszystkich quizów)
-quiz_frame = tk.Frame(root)
-
-question_number_label = tk.Label(quiz_frame, text="", font=("Arial", 16, "bold"))
-question_label = tk.Label(quiz_frame, text="", wraplength=600, justify="center", font=("Arial", 18))
+# Ramka quizu – wspólna dla wszystkich quizów
+quiz_frame = tk.Frame(root, bg="white")
+question_number_label = tk.Label(quiz_frame, text="", font=("Arial", 16, "bold"), bg="white")
+question_label = tk.Label(quiz_frame, text="", wraplength=600, justify="center", font=("Arial", 18), bg="white")
 option_buttons = [tk.Button(quiz_frame, text="", width=60, height=3, font=("Arial", 14)) for _ in range(4)]
 
 root.mainloop()
+
