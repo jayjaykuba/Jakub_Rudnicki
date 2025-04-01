@@ -642,7 +642,7 @@ questions_accessibility = [
         "Technologie asystujące, takie jak czytniki ekranu czy lupy ekranowe, są niezbędne dla osób z niepełnosprawnościami, umożliwiając im korzystanie z komputerów i smartfonów."
     ),
     (
-        "Dlaczego testowanie dostępności jest ważne?",
+        "Dlaczego wdrażanie rozwiązań dostępności jest ważne",
         [
             "Poprawia SEO",
             "Zwiększa liczbę potencjalnych użytkowników",
@@ -650,7 +650,7 @@ questions_accessibility = [
             "Wszystkie powyższe odpowiedzi"
         ],
         3,
-        "Testowanie dostępności poprawia SEO, zwiększa potencjalną liczbę użytkowników oraz spełnia wymagania prawne, co czyni je kluczowym elementem projektowania stron."
+        "Wdrażanie rozwiązań dostępności przynosi wszystkie wymienione korzyści jednocześnie: poprawia SEO, zwiększa grono potencjalnych użytkowników oraz pomaga spełnić wymogi prawne, co czyni je kompleksowym i wielowymiarowym podejściem do projektowania i rozwijania stron internetowych."
     ),
     (
         "Co to jest 'alt text' (tekst alternatywny) w kontekście stron internetowych?",
