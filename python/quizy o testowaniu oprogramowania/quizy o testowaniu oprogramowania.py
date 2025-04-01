@@ -230,8 +230,8 @@ questions_nonfunctional = [
         "Który z poniższych parametrów jest kluczowy przy testach dostępności (accessibility testing)?",
         [
             "Szybkość ładowania strony lub aplikacji",
-            "Zgodność z wytycznymi WCAG oraz normami dla osób niepełnosprawnych",
-            "Responsywność interfejsu przy różnych rozdzielczościach ekranu",
+            "Zgodność z wytycznymi WCAG oraz normami dla osób z niepełnosprawnościami",
+            "Szybkość przewijania strony",
             "Liczba dostępnych funkcji poprawiających komfort użytkowania"
         ],
         1,
@@ -573,7 +573,7 @@ questions_accessibility = [
             "Stopka strony"
         ],
         1,
-        "Alt text to opis obrazu dodawany do tagu <img>, który jest odczytywany przez czytniki ekranu, umożliwiając zrozumienie treści wizualnej przez osoby niewidome."
+        "Alt text to opis obrazu dodawany do tagu <img>, który jest odczytywany przez czytniki ekranu, umożliwiając zrozumienie treści wizualnej przez użytkowników czytników ekranu."
     ),
     (
         "Co to jest semantyczny HTML i dlaczego jest ważny dla dostępności?",
@@ -606,7 +606,7 @@ questions_accessibility = [
             "Błąd jest komunikowany zmianą ikony w prawym rogu ekranu"
         ],
         0,
-        "Błąd powinien być wyraźnie komunikowany wizualnie (np. czerwona ramka) oraz tekstowo, aby był dostępny dla wszystkich użytkowników, w tym osób korzystających z czytników ekranu."
+        "Błąd powinien być komunikowany przynajmniej na dwa sposoby - np. wizualnie (np. czerwona ramka) oraz tekstowo, aby był dostępny dla wszystkich użytkowników, w tym osób korzystających z czytników ekranu."
     ),
     (
         "Co jest wymagane dla napisów (captions) na żywo zgodnie z WCAG?",
@@ -623,12 +623,12 @@ questions_accessibility = [
         "Co to jest 'screen reader'?",
         [
             "Oprogramowanie do edycji zdjęć",
-            "Narzędzie odczytujące tekst na ekranie dla osób niewidomych",
+            "Narzędzie odczytujące tekst na ekranie dla, np. osób niewidomych",
             "Aplikacja do nauki języków",
             "Automatyczny tester interfejsu graficznego"
         ],
         1,
-        "Screen reader to oprogramowanie, które odczytuje na głos zawartość ekranu, umożliwiając osobom niewidomym korzystanie z urządzeń."
+        "Screen reader to oprogramowanie, które odczytuje na głos zawartość ekranu, umożliwiając, np. osobom niewidomym korzystanie z urządzeń."
     ),
     (
         "Czym są technologie asystujące?",
