@@ -1,4 +1,4 @@
-Projekt przedstawia praktyczną analizę danych z NASA Exoplanet Archive (dane z roku 2021), czyli największej publicznej bazy zawierającej potwierdzone egzoplanety oraz parametry ich gwiazd.
+Projekt przedstawia praktyczną analizę danych z NASA Exoplanets Archive (dane z roku 2021), czyli największej publicznej bazy zawierającej potwierdzone egzoplanety oraz parametry ich gwiazd.
 Celem projektu było:
 
 - przećwiczenie zapytań SQL na realnym, dużym zestawie danych,
