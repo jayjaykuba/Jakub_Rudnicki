@@ -1,6 +1,6 @@
 # Polish Native Speaker – Audio Samples
 
-This repository contains unprocessed audio samples recorded by a Polish native speaker.
+This repository contains unprocessed audio samples recorded by myself, a Polish native speaker.
 The recordings are intended as voice samples for language-related work such as data collection,
 speech evaluation, and AI/ASR/TTS projects.
 
