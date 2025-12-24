@@ -6,7 +6,7 @@ speech evaluation, and AI/ASR/TTS projects.
 
 ## Audio format
 - WAV
-- 24-bit
+- 16 bit
 - Mono
 - Unprocessed (no noise reduction, no compression, no normalization)
 - Recorded on a mobile device in a natural environment
